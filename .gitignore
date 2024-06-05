@@ -1,0 +1,4 @@
+*.pt
+/training
+/.vscode
+__pycache__

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Image Colorizer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/styles.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/static/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/static/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/static/favicon/favicon-16x16.png"
+    />
+  </head>
+  <body
+    style="
+      background-image: url('static/images/bg.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+    "
+  >
+    <nav>
+      <a href="/about" class="nav-links">About</a>
+      <a href="#" class="nav-links">Home</a>
+      <a href="https://github.com/amardotai/Image_Colorizer" class="nav-links"
+        >Source Code</a
+      >
+    </nav>
+    <center>
+      <div class="container">
+        <h1 style="color: #fff" class="title">Image Colorizer</h1>
+
+        <form
+          action="/upload_image"
+          enctype="multipart/form-data"
+          method="post"
+        >
+          <div class="form-group">
+            <div class="subtitle">Upload a GreyScale Image</div>
+
+            <div class="input-container ic2">
+              <input class="form-control" id="file" name="file" type="file" />
+              <br />
+            </div>
+          </div>
+          <button type="submit" class="submit" role="button">
+            <span class="text">Submit</span>
+            <span>Colorize 👍</span>
+          </button>
+          {% if error %}
+          <p class="alert">😥 please choose an image</p>
+          {% endif %}
+        </form>
+      </div>
+    </center>
+  </body>
+</html>
